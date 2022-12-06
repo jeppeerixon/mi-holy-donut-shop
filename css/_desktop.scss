@@ -1,0 +1,107 @@
+@media screen and (min-width: 1200px) {
+  .shop {
+    display: grid;
+    grid-template-columns: repeat(4, 280px);
+  }
+
+  nav {
+    position: fixed;
+    z-index: 3;
+    display: flex;
+    ul {
+      justify-content: right;
+      li {
+        margin-left: 80px;
+        margin-right: 80px;
+      }
+    }
+
+    img,
+    p {
+      display: block;
+    }
+    img {
+      width: 50px;
+      height: auto;
+    }
+    .logotype {
+      display: flex;
+      align-items: center;
+      p {
+        color: $dark--color;
+        font-family: caraque-melted, sans-serif;
+        font-size: 2rem;
+        span {
+          color: $accent-color;
+        }
+      }
+      p,
+      img {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  header {
+    min-height: 100vh;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 100px;
+
+    .big--logotype {
+      display: block;
+      width: 700px;
+      height: 350px;
+      margin-top: 70px;
+      margin-left: 0;
+    }
+
+    h1 {
+      font-size: 11rem;
+      line-height: 9rem;
+    }
+
+    a {
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+  .thirdPageCheckoutForm {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+  .cart-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 auto;
+    width: 90%;
+  }
+  #donuts-cart {
+    width: 50%;
+    ul {
+      li {
+        img {
+          display: block;
+          position: relative;
+          bottom: 15px;
+          width: 50px;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  .row {
+    flex-direction: row;
+  }
+}

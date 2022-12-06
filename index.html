@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/bae5c522cf.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Adobe fonts -->
+  <link rel="stylesheet" href="https://use.typekit.net/ols8guo.css">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+  <title>Holy Donuts Shop</title>
+</head>
+
+<body id="body">
+  <nav>
+    <div class="logotype">
+      <img src="images/donut_logo.png" class="small--logotye" width="50" height="50" alt="a pink donut" loading="lazy">
+      <p><span>Holy</span>Donut.</p>
+    </div>
+    <ul>
+      <li>
+        <button id="darkThemeBtn" aria-label="aktivera mörkt tema">
+          <i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+      </li>
+      <!-- <li><a href="#">hem</a></li>
+          <li><a href="#">shop</a></li> -->
+      <li>
+        <a href="#cartAndPrice" id="cartSymbol"><i class="fa-solid fa-cart-shopping"></i><span>0</span></a>
+      </li>
+    </ul>
+  </nav>
+  <header>
+    <img src="images/holy_donut.png" class="big--logotype" width="100" height="100" alt="flying donuts" loading="lazy">
+    <div class="header--content">
+      <h1>
+        <span class="logo--light">Holy</span><br><span class="logo--dark">Donut</span>
+      </h1>
+      <p>Saftiga munkar som sända från ovan</p>
+      <a href="#shop">Beställ nu!</a>
+    </div>
+  </header>
+
+  <div class="sort-bar">
+    <h3>Sortera efter:</h3>
+    <div id="buttonContainer">
+      <button id="sortName" class="sortBtn" aria-label="Sortera munkar efter namn">
+        Namn <i class="fa-solid fa-arrow-down-a-z"></i>
+      </button>
+      <button id="sortRating" class="sortBtn" aria-label="Sortera munkar efter betyg">
+        Betyg <i class="fa-solid fa-star"></i>
+      </button>
+      <button id="sortCategory" class="sortBtn" aria-label="sortera munkar efter kategori">
+        Kategori <i class="fa-sharp fa-solid fa-filter"></i>
+      </button>
+      <button id="sortPrice" class="sortBtn" aria-label="sortera munkar efter pris">
+        Pris <i class="fa-solid fa-arrow-down-1-9"></i>
+      </button>
+
+      <div style="display: inline-block" class="price-form">
+        <!-- <input type="range" min="1" max="3" value="1" class="slider" id="rangeElement"> -->
+        <input type="number" name="min-donut-price" title="Minsta munk priset." id="minPrice" class="price-range-input"
+          min="0">
+        <span>-</span>
+        <input type="number" id="maxPrice" name="max-donut-price" title="Högsta munk priset." class="price-range-input"
+          min="0">
+        <span>Kr</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="shop" id="shop"></div>
+
+  <section class="thirdPageCheckoutForm">
+    <section class="checkOut" id="cartAndPrice">
+      <h2>Kundvagn</h2>
+      <div class="cart-flex">
+        <div id="donuts-cart">
+          <h3>Varukorgen är tom</h3>
+        </div>
+        <div class="cart-info">
+          <div>
+            <label for="discount">Har du en rabattkod?</label>
+            <div class="discount-flex">
+              <input type="text" name="rabattkod" placeholder="rabattkod" id="discount">
+              <button id="discountBtn" aria-label="aktivera rabattkod">
+                Aktivera rabatt
+              </button>
+            </div>
+          </div>
+          <p id="totalPrice">Pris: 0 kr</p>
+          <p id="shippingPrice"></p>
+          <p id="priceWithShipping"></p>
+        </div>
+      </div>
+      <div class="cart-buttons">
+        <button class="btn" id="goToCheckOut" aria-label="fortsätt till utcheckning">
+          Fortsätt till betalning
+        </button>
+
+        <button class="btn" id="clearBtn" aria-label="rensa varukorgen">
+          Rensa varukorgen
+        </button>
+      </div>
+    </section>
+
+    <section class="userForm" id="userForm">
+      <form>
+        <div class="row">
+          <div class="col-50">
+            <h3>Betalinformation</h3>
+            <div class="errorInput"></div>
+            <label for="fname">Förnamn (required)</label>
+            <input type="text" id="fname" name="firstname" placeholder="Hung">
+            <label for="lname">Efternamn (required)</label>
+            <input type="text" id="lname" name="lastname" placeholder="Rigg">
+            <label for="email">Epost (required)</label>
+            <input type="text" id="email" name="email" placeholder="skicka@epost.se">
+
+            <div class="row">
+              <div class="col-75">
+                <label for="adr">Gatuadress (required)</label>
+                <input type="text" id="adr" name="address" placeholder="Givmunkar 12B">
+              </div>
+              <div class="col-25">
+                <label for="adr">Portkod</label>
+                <input type="text" id="portkod" name="portkod" placeholder="1234">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-50">
+                <label for="city">Ort (required)</label>
+                <input type="text" id="city" name="city" placeholder="Munkfors">
+              </div>
+              <div class="col-50">
+                <label for="zip">Postnr (required)</label>
+                <input type="text" id="zip" name="zip" placeholder="13337">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-50">
+                <button type="button" class="btn clear" id="clearFormButton" aria-label="rensa formulär">
+                  Rensa formulär
+                </button>
+              </div>
+              <div class="col-50">
+                <button type="button" class="btn clear" id="buyMoreDonuts" aria-label="gå tillbaka till shopen">
+                  Tillbaka till shoppen
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-50">
+            <h3>Betalmetod</h3>
+
+            <label for="paymentMethod">Välj betalmetod:</label>
+            <select id="paymentMethod" name="paymentMethod">
+              <option value="nooption">Välj betalmetod</option>
+              <option value="kort">Kort</option>
+              <option value="faktura" id="paymentFaktura">Faktura</option>
+            </select>
+            <div class="errorInput"></div>
+            <label hidden for="personnum">Personnummer (required)</label>
+            <input type="text" id="personnum" name="personnumber" placeholder="ÅÅMMDD1234" hidden>
+            <label hidden for="cname">Namn på kortet</label>
+            <input type="text" id="cname" name="cardname" placeholder="Hung Rigg" data-operator="creditcard" hidden>
+            <label hidden for="ccnum">Betalkorts nummer</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" data-operator="creditcard"
+              hidden>
+            <label hidden for="expmonth">Utgångs Månad</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="januari" data-operator="creditcard" hidden>
+            <div class="row">
+              <div class="col-50">
+                <label hidden for="expyear">Utgångs År</label>
+                <input type="text" id="expyear" name="expyear" placeholder="1984" data-operator="creditcard" hidden>
+              </div>
+              <div class="col-50">
+                <label hidden for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="123" data-operator="creditcard" hidden>
+              </div>
+            </div>
+          </div>
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="newsletter"> Yes,
+          jag vill prenumerera på nyhetsbrev!
+        </label>
+        <label>
+          <input type="checkbox" id="approvedGDPR" name="approvedGDPR"> Yes,
+          jag godkänner behandling av personuppgifter!
+        </label>
+        <input disabled type="button" value="Fyll i formuläret för att fortsätta..." class="btn" id="sendOrder">
+      </form>
+    </section>
+  </section>
+  <section class="checkOutPopUp" id="checkOutPopUp">
+    <div id="deliveryInformation"></div>
+    <img src="images/holy_donut.png" width="100" height="70" alt="holy domut logga" loading="lazy">
+  </section>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

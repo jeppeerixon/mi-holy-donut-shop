@@ -1,0 +1,518 @@
+$light--color: #e8c683;
+$dark--color: #361c1b;
+$middle--color: #6a3d2c;
+$accent-color: #ea5c91;
+$soft--light: #ede5d5;
+
+//general
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: $soft--light;
+}
+
+.shop {
+  display: grid;
+  grid-template-columns: repeat(1, 280px);
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+body {
+  text-align: center;
+  font-family: nunito, sans-serif;
+  margin: 0;
+  padding: 0;
+  // overflow: hidden;
+}
+
+img {
+  display: block;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+//nav
+
+nav {
+  z-index: 3;
+  position: fixed;
+  margin: 0;
+  width: 100vw;
+  height: 60px;
+  background: rgba(232, 198, 131, 0.8);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  img,
+  p {
+    display: none;
+  }
+  ul {
+    padding: 0;
+    width: 90%;
+    margin: 3px auto;
+    opacity: 1;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  a {
+    font-size: 2rem;
+    color: $dark--color;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  button {
+    color: $dark--color;
+    background: transparent;
+    border: none;
+    font-size: 1.7rem;
+    margin-top: 2px;
+    cursor: pointer;
+    &:hover {
+      color: $accent-color;
+    }
+  }
+  #cartSymbol {
+    span {
+      background: $accent-color;
+      font-size: 1.2rem;
+      border-radius: 20px;
+      padding-left: 7px;
+      padding-right: 7px;
+      position: relative;
+      top: -10px;
+      left: -5px;
+    }
+  }
+}
+
+//header
+header {
+  height: 100vh;
+  padding-top: 80px;
+  .big--logotype {
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 0;
+  }
+  .header--background {
+    display: none;
+  }
+  h1,
+  p,
+  a {
+    margin-top: 30px;
+    margin-bottom: 0px;
+  }
+  h1 {
+    font-family: caraque-melted, sans-serif;
+    font-size: 8rem;
+    line-height: 7rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.66);
+
+    .logo--light {
+      color: $light--color;
+      -webkit-text-stroke-color: $middle--color;
+      -webkit-text-stroke-width: 1px;
+    }
+    .logo--dark {
+      color: $dark--color;
+    }
+  }
+  a {
+    display: block;
+    font-family: caraque-melted, sans-serif;
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 15px;
+    background: $light--color;
+    color: $dark--color;
+    font-size: 1.5rem;
+    border: 3px solid $middle--color;
+    border-radius: 40px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.66);
+    &:hover {
+      background: $accent-color;
+    }
+  }
+}
+
+.sort-bar {
+  button {
+    background: transparent;
+    border: none;
+    margin-bottom: 30px;
+    cursor: pointer;
+    &:hover {
+      color: $accent-color;
+    }
+  }
+  .active {
+    color: $accent-color;
+  }
+}
+
+.item {
+  border: 2px solid $dark--color;
+  border-radius: 6px;
+  background: $light--color;
+  color: $dark--color;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.66);
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+}
+
+.price-quantity {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.buttons {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  font-size: 36px;
+  margin: auto;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+.bi-dash-circle-fill {
+  margin-right: 30px;
+}
+
+.bi-plus-circle-fill {
+  margin-left: 30px;
+}
+
+.price-quantity {
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+// jesper i nikos del //
+// pilar till munkbilderna
+.img-container {
+  position: relative;
+  i:nth-child(1) {
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    font-size: 2rem;
+    color: $middle--color;
+  }
+  i:nth-child(3) {
+    position: absolute;
+    top: 40%;
+    right: 5%;
+    font-size: 2rem;
+    color: $middle--color;
+  }
+  i:hover {
+    color: $accent-color;
+  }
+}
+
+// style för rating stars //
+.description p {
+  font-size: 1.5rem;
+
+  .ratingStars1:nth-child(1) {
+    color: $accent-color;
+  }
+
+  .ratingStars2:nth-child(-n + 2) {
+    color: $accent-color;
+  }
+
+  .ratingStars3:nth-child(-n + 3) {
+    color: $accent-color;
+  }
+
+  .ratingStars4:nth-child(-n + 4) {
+    color: $accent-color;
+  }
+
+  .ratingStars5 {
+    color: $accent-color;
+  }
+}
+
+// NIKOLAJ SLUT //
+
+* {
+  box-sizing: border-box;
+}
+
+.thirdPageCheckoutForm {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  gap: 25px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.checkOut {
+  background-color: $light--color;
+  color: $dark--color;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex: 50%;
+  padding: 10px 15px 10px 15px;
+  border-radius: 25px;
+  border: 2px solid $dark--color;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.66);
+  width: 90%;
+  margin: 20px auto;
+}
+
+#donuts-cart {
+  text-align: left;
+  // display: flex;
+  h3 {
+    text-align: center;
+  }
+  div {
+    display: flex;
+    margin-bottom: 40px;
+  }
+  img {
+    width: 100px;
+    height: 100px;
+    border: 1px solid $dark--color;
+    border-radius: 10px;
+  }
+  ul {
+    list-style-type: none;
+    li {
+      span {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+.cart-info {
+  background: $soft--light;
+  border: 1px solid $dark--color;
+  padding: 20px 10px;
+  border-radius: 25px;
+  input {
+    margin-bottom: 0;
+  }
+  button {
+    margin-top: 0;
+    margin-bottom: 30px;
+    background-color: $middle--color;
+    font-family: "nunito", sans serif;
+    color: white;
+    border: 1px solid $dark--color;
+    padding: 12px;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 17px;
+    &:hover {
+      background-color: $dark--color;
+    }
+  }
+  #totalPrice,
+  #shippingPrice,
+  #priceWithShipping {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+  #priceWithShipping {
+    font-size: 1.3rem;
+  }
+}
+.userForm {
+  background-color: $light--color;
+  color: $dark--color;
+  border: 2px solid $dark--color;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.66);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px 15px 10px 15px;
+  border-radius: 25px;
+  width: 90%;
+  margin: 20px auto;
+  display: none;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -16px;
+  flex-direction: column;
+}
+
+.col-25 {
+  flex: 25%;
+}
+
+.col-50 {
+  flex: 50%;
+}
+
+.col-75 {
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+input[type="text"] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+select {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.btn {
+  background-color: $middle--color;
+  font-family: "nunito", sans serif;
+  color: white;
+  border: 1px solid $dark--color;
+  padding: 12px;
+  margin: 10px 0;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: $dark--color;
+}
+
+.clear:hover {
+  background-color: red;
+}
+
+.dark-theme {
+  background: $middle--color;
+  color: $light--color;
+  .item {
+    border: 2px solid $light--color;
+    background: $dark--color;
+    color: $light--color;
+  }
+  .cart-info {
+    background: $middle--color;
+    color: $soft--light;
+    button {
+      background: $dark--color;
+      &:hover {
+        color: $dark--color;
+        background: $light--color;
+      }
+    }
+  }
+  .checkOut,
+  .userForm {
+    background-color: $dark--color;
+    color: $light--color;
+    border: 1px solid $dark--color;
+  }
+}
+.cart-buttons {
+  #clearBtn {
+    &:hover {
+      background: red;
+    }
+  }
+}
+
+.christmas-theme {
+  background: url("/images/christmas.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  color: red;
+  p,
+  h1,
+  h2,
+  h3,
+  span,
+  button,
+  a,
+  label {
+    color: red;
+  }
+  #cartSymbol {
+    span {
+      background: darkgreen;
+    }
+  }
+}
+
+.checkOutPopUp {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100vh;
+  width: 100vw;
+  #deliveryInformation {
+    background: $soft--light;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 100px;
+    border: 2px solid $dark--color;
+    color: $dark--color;
+    border-radius: 20px;
+    line-height: 3rem;
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+  img {
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+  }
+}
